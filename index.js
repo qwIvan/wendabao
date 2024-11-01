@@ -13,13 +13,8 @@ setTimeout(function(){
       var switchPanel = document.querySelector('div.switch-panel');
       if (switchPanel) {
           switchPanel.addEventListener('click', function(e) {
-              e.stopPropagation();
-              var link = document.createElement('a');
-              link.href = 'https://ai.wendabao-a.net/?utm_source=beta';
-              link.target = '_blank';
-              link.click();
+              window.location.href = 'https://ai.wendabao-a.net/?utm_source=betaplus#/?role=PLUS'
           });
-            switchPanel.querySelectorAll('div').forEach(item=>item.style.pointerEvents = "none")
       }
   }
 }, 10000)
