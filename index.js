@@ -4,7 +4,7 @@ if (window.location.hostname==="ai.wendabeta.net") {
         var parentElement = iconSpan.parentElement;
         parentElement.addEventListener('click', function() {
             var link = document.createElement('a');
-            link.href = 'https://ai.wendabao-a.net';
+            link.href = 'https://ai.wendabao-a.net/?utm_source=beta';
             link.target = '_blank';
             link.click();
         });
