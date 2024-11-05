@@ -1,5 +1,5 @@
 function goNew(newTab) {
-    if (confirm("当前网址ai.wendabeta.net已停用，是否前往继续使用？")) {
+    if (confirm("当前网址ai.wendabeta.net已停用，是否前往新网址继续使用？")) {
         if (newTab){
             window.open('https://ai.wendabao-a.net/?utm_source=betanewtab#/?role=PLUS', "_blank")
         } else {
