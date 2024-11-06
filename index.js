@@ -1,10 +1,26 @@
+function redirTo(dstHost, mark, newTab) {
+    var dst = window.location.href.replace(window.location.hostname, dstHost)
+    if (mark) {
+        const dstUrl = new URL(dst)
+        const params = new URLSearchParams(dstUrl.search);
+        if (!params.has('utm_source')) {
+            params.append('utm_source', dstHost+(newTab?"betanewtab":"betaredir"))
+        }
+        dstUrl.search = params.toString();
+        dst = dstUrl.toString();
+        dst = 'https://ai.wendabao.net/api/v2/mark-redir?url=' + encodeURIComponent(dst)
+    }
+    if (newTab) {
+        window.open(dst, "_blank")
+    } else {
+        window.location.href = dst
+    }
+};
+
+
 function goNew(newTab) {
     if (confirm("当前网址ai.wendabeta.net已停用，是否前往新网址继续使用？")) {
-        if (newTab){
-            window.open('https://ai.wendabao-a.net/?utm_source=betanewtab#/?role=PLUS', "_blank")
-        } else {
-            window.location.href = 'https://ai.wendabao-a.net/?utm_source=betaredir#/?role=PLUS'
-        }
+        redirTo('ai.wendabao-a.net', true, newTab)
     }
 }
 
