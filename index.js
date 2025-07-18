@@ -1,4 +1,4 @@
-if (window.location.host!=='47.238.172.165:65511'){
+if (['ai.wendabao.net','ai.wendabao-c.net'].includes(window.location.host)){
   try {
     var redir = true;
     if (localStorage.chatStorage) {
